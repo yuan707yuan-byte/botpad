@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg:      #06060f;
+  --card:    #0d0d1f;
+  --border:  #1a1a3a;
+  --primary: #00ffb2;
+  --purple:  #7b61ff;
+  --red:     #ff4d6d;
+  --text:    #e8e8f0;
+  --muted:   #6b7199;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font-family: 'Space Grotesk', sans-serif; min-height: 100vh; }
+.mono { font-family: 'JetBrains Mono', monospace; }
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+.grad { background: linear-gradient(135deg,#00ffb2,#7b61ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; }
+.btn-primary { background: var(--primary); color: #000; font-weight: 700; border-radius: 8px; padding: 10px 20px; cursor: pointer; border: none; transition: opacity .15s; font-family: inherit; font-size: 14px; display: inline-block; text-align: center; text-decoration: none; }
+.btn-primary:hover { opacity: .85; }
+.btn-primary:disabled { opacity: .4; cursor: not-allowed; }
+.btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text); border-radius: 8px; padding: 10px 20px; cursor: pointer; transition: border-color .15s; font-family: inherit; font-size: 14px; display: inline-block; text-align: center; text-decoration: none; }
+.btn-outline:hover { border-color: var(--primary); }
+.input { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; color: var(--text); width: 100%; font-family: inherit; font-size: 14px; outline: none; }
+.input:focus { border-color: var(--primary); }
+.progress-track { background: var(--border); border-radius: 99px; height: 8px; overflow: hidden; }
+.progress-fill { background: linear-gradient(90deg, var(--primary), var(--purple)); height: 100%; border-radius: 99px; transition: width .4s; }
+.badge-green  { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 99px; background: rgba(0,255,178,.12); color: var(--primary); border: 1px solid rgba(0,255,178,.25); display: inline-block; }
+.badge-purple { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 99px; background: rgba(123,97,255,.12); color: var(--purple); border: 1px solid rgba(123,97,255,.25); display: inline-block; }
+@keyframes fade-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.fade-in { animation: fade-in .25s ease-out both; }
